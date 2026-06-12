@@ -19,16 +19,12 @@ public class TipoAtividade {
     @Column(nullable = false, length = 150)
     private String nome;
 
-    @Column(nullable = false, length = 200)
-    private String observacoes; // DEIXA OU PODE TIRAR ?
-
     public TipoAtividade() {
     }
 
     public TipoAtividade(UUID id, String nome, String observacoes) {
         this.id = id;
         this.nome = nome;
-        this.observacoes = observacoes;
     }
 
     public UUID getId() {
@@ -46,13 +42,4 @@ public class TipoAtividade {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getObservacoes() {
-        return observacoes;
-    }
-
-    public void setObservacoes(String observacoes) {
-        this.observacoes = observacoes;
-    }
-
 }

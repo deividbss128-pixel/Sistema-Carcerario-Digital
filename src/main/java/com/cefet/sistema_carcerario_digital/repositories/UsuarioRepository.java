@@ -4,8 +4,8 @@ import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.cefet.sistema_carcerario_digital.entities.Usuario;
+import com.cefet.sistema_carcerario_digital.entities.Pessoa;
 
-public interface UsuarioRepository extends JpaRepository<Usuario, UUID> {
+public interface UsuarioRepository extends JpaRepository<Pessoa, UUID> {
 
 }

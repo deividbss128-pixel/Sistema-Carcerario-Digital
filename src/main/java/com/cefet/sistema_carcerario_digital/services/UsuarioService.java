@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
-import com.cefet.sistema_carcerario_digital.entities.Usuario;
+import com.cefet.sistema_carcerario_digital.entities.Pessoa;
 import com.cefet.sistema_carcerario_digital.exceptions.ResourceNotFoundException;
 import com.cefet.sistema_carcerario_digital.repositories.UsuarioRepository;
 
@@ -18,19 +18,19 @@ public class UsuarioService {
         this.repo = repo;
     }
 
-    public List<Usuario> findAll() {
+    public List<Pessoa> findAll() {
         return repo.findAll();
     }
 
-    public Usuario findById(UUID id) {
+    public Pessoa findById(UUID id) {
         return repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("Usuario not found"));
     }
 
-    public Usuario create(Usuario usuario) {
+    public Pessoa create(Pessoa usuario) {
         return repo.save(usuario);
     }
 
-    public Usuario update(UUID id, Usuario usuario) {
+    public Pessoa update(UUID id, Pessoa usuario) {
         if (!repo.existsById(id)) throw new ResourceNotFoundException("Usuario not found");
         usuario.setId(id);
         return repo.save(usuario);

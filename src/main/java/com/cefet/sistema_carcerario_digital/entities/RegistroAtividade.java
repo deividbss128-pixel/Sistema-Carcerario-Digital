@@ -21,39 +21,35 @@ public class RegistroAtividade {
     private UUID id;
 
     @Column(nullable = false)
-    private LocalDateTime data; // LocalDateTime pega a data e a hora
+    private LocalDateTime dataRegistro; // LocalDateTime pega a data e a hora
     // LocalDateTime.of(ano, mes, dia, hora, min)
 
     @Column(nullable = false, length = 200)
     private String descricao;
-
-    @Column(nullable = false)
-    private Boolean status; // vai precisar ou pode deixar sem ?
 
     @ManyToOne
     @JoinColumn(name = "tipo_atividade_id", nullable = false)
     private TipoAtividade tipo;
 
     @ManyToOne
-    @JoinColumn(name = "detento_id", nullable = false)
-    private Detento detendo;
+    @JoinColumn(name = "pena_id", nullable = false)
+    private Pena pena;
 
     @ManyToOne
-    @JoinColumn(name = "usuario_id", nullable = false)
-    private Usuario usuario;
+    @JoinColumn(name = "pessoa_id", nullable = false)
+    private Pessoa pessoa;
 
     public RegistroAtividade() {
     }
 
-    public RegistroAtividade(UUID id, LocalDateTime data, String descricao, Boolean status, TipoAtividade tipo, Detento detendo,
-            Usuario usuario) {
+    public RegistroAtividade(UUID id, LocalDateTime dataRegistro, String descricao, TipoAtividade tipo, Pena pena,
+            Pessoa usuario) {
         this.id = id;
-        this.data = data;
+        this.dataRegistro = dataRegistro;
         this.descricao = descricao;
-        this.status = status;
         this.tipo = tipo;
-        this.detendo = detendo;
-        this.usuario = usuario;
+        this.pena = pena;
+        this.pessoa = usuario;
     }
 
     public UUID getId() {
@@ -64,12 +60,12 @@ public class RegistroAtividade {
         this.id = id;
     }
 
-    public LocalDateTime getData() {
-        return data;
+    public LocalDateTime getDataRegistro() {
+        return dataRegistro;
     }
 
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setDataRegistro(LocalDateTime dataRegistro) {
+        this.dataRegistro = dataRegistro;
     }
 
     public String getDescricao() {
@@ -80,14 +76,6 @@ public class RegistroAtividade {
         this.descricao = descricao;
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
     public TipoAtividade getTipo() {
         return tipo;
     }
@@ -96,21 +84,19 @@ public class RegistroAtividade {
         this.tipo = tipo;
     }
 
-    public Detento getDetendo() {
-        return detendo;
+    public Pena getPena() {
+        return pena;
     }
 
-    public void setDetendo(Detento detendo) {
-        this.detendo = detendo;
+    public void setPena(Pena pena) {
+        this.pena = pena;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Pessoa getPessoa() {
+        return pessoa;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
     }
-
-
 }
