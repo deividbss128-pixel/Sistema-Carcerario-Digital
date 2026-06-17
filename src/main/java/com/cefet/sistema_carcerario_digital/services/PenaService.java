@@ -63,8 +63,6 @@ public class PenaService {
         return new PenaResponseDTO(entity);
     }
 
-    // ----> PAREI AQUI <----
-
     @Transactional
     public PenaResponseDTO alterar(UUID id, PenaRequestDTO dto) {
         Pena entity = repo.findById(id)

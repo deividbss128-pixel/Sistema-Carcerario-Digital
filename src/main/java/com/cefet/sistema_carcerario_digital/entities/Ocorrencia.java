@@ -22,23 +22,12 @@ public class Ocorrencia {
     @Column(nullable = false)
     private LocalDateTime dataRegistro;
 
-    // Para fazer a separação dos campos de data e hora no front:
-
-    // LocalDate date = LocalDate.of(year, month, dayOfMonth);
-    // LocalTime time = LocalTime.of(hour, minute);
-    // return new LocalDateTime(date, time);
-
     @Column(nullable = false, length = 200)
     private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "tipo_ocorrencia_id", nullable = false)
     private UUID tipo_id;
-
-    // deixamos o agente como atributo ou só o detento?
-    // @ManyToOne
-    // @JoinColumn(name = "pessoa_id", nullable = false)
-    // private Pessoa pessoa;
 
     @ManyToOne
     @JoinColumn(name = "pena_id", nullable = false)
@@ -47,16 +36,12 @@ public class Ocorrencia {
     public Ocorrencia() {
     }
 
-    // QUAL DOS DOIS FICA, OU PRECISAMOS DOS DOIS CONSTRUTURES?
     public Ocorrencia(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo_id, UUID pena_id) {
-    // public Ocorrencia(UUID id, LocalDateTime dataRegistro, String descricao, TipoOcorrencia tipo,
-    //         Pessoa pessoa, Pena pena) {
         this.id = id;
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
         this.tipo_id = tipo_id;
         this.pena_id = pena_id;
-        // this.pessoa = pessoa;
     }
 
     public UUID getId() {
@@ -98,12 +83,4 @@ public class Ocorrencia {
     public void setPenaId(UUID pena_ida) {
         this.pena_id =pena_ida;
     }
-
-    // public Pessoa getPessoa() {
-    // return pessoa;
-    // }
-
-    // public void setPessoa(Pessoa pessoa) {
-    // this.pessoa = pessoa;
-    // }
 }

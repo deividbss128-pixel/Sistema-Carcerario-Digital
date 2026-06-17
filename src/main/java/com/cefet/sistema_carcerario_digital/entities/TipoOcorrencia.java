@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_tipo_atividade")
+@Table(name = "tb_tipo_ocorrencia")
 public class TipoOcorrencia {
     @Id
     @GeneratedValue

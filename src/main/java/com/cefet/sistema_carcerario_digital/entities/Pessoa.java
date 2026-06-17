@@ -22,18 +22,6 @@ public class Pessoa {
     @Column(nullable = false, unique = true, length = 14)
     private String cpf; 
 
-    // @Column(nullable = false, unique = true)
-    // private String login;
-    // // para simplificar vamos ter um email diferente para cada acesso
-    // // no caso de uma pessoa ter acesso como AGENTE e SUPERVISOR
-
-    // @Column(nullable = false)
-    // private String senha;
-
-    // @Enumerated(EnumType.STRING)
-    // @Column(nullable = false)
-    // private TipoUsuario tipo; // aqui diferenciamos os usuários em AGENTE e SUPERVISOR
-
     public Pessoa() {
     }
 

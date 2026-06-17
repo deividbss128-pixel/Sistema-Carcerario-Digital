@@ -21,36 +21,35 @@ public class RegistroAtividade {
     private UUID id;
 
     @Column(nullable = false)
-    private LocalDateTime dataRegistro; // LocalDateTime pega a data e a hora
-    // LocalDateTime.of(ano, mes, dia, hora, min)
+    private LocalDateTime dataRegistro; 
 
     @Column(nullable = false, length = 200)
     private String descricao;
 
     @ManyToOne
     @JoinColumn(name = "tipo_atividade_id", nullable = false)
-    private UUID tipo;
+    private UUID tipo_id;
 
     @ManyToOne
     @JoinColumn(name = "pena_id", nullable = false)
-    private UUID pena;
+    private UUID pena_id;// o detento
 
     // verificar se deixamos ou se tiramos depois !
     @ManyToOne
     @JoinColumn(name = "pessoa_id", nullable = false)
-    private UUID pessoa;// agente que registrou a pena
+    private UUID pessoa_id;// agente que registrou a pena
 
     public RegistroAtividade() {
     }
 
-    public RegistroAtividade(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo, UUID pena,
-            UUID pessoa) {
+    public RegistroAtividade(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo_id, UUID pena_id,
+            UUID pessoa_id) {
         this.id = id;
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
-        this.tipo = tipo;
-        this.pena = pena;
-        this.pessoa = pessoa;
+        this.tipo_id = tipo_id;
+        this.pena_id = pena_id;
+        this.pessoa_id = pessoa_id;
     }
 
     public UUID getId() {
@@ -78,26 +77,26 @@ public class RegistroAtividade {
     }
 
     public UUID getTipoId() {
-        return tipo;
+        return tipo_id;
     }
 
-    public void setTipoId(UUID tipo) {
-        this.tipo = tipo;
+    public void setTipoId(UUID tipo_id) {
+        this.tipo_id = tipo_id;
     }
 
     public UUID getPenaId() {
-        return pena;
+        return pena_id;
     }
 
-    public void setPenaId(UUID pena) {
-        this.pena = pena;
+    public void setPenaId(UUID pena_id) {
+        this.pena_id = pena_id;
     }
 
     public UUID getPessoaId() {
-        return pessoa;
+        return pessoa_id;
     }
 
-    public void setPessoaId(UUID pessoa) {
-        this.pessoa = pessoa;
+    public void setPessoaId(UUID pessoa_id) {
+        this.pessoa_id = pessoa_id;
     }
 }
