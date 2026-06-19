@@ -23,7 +23,7 @@ public class Condenacao {
     private UUID id;
 
     @Column(nullable = false, length = 150)
-    private String descricao;
+    private String descricao; // descrevemos a(s) condenação(ões) do detento
 
     @Column(nullable = false)
     private LocalDateTime dataEntrada; // (Service) tem que fazer a insercao manual
