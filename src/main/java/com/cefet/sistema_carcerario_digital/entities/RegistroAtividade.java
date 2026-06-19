@@ -31,24 +31,23 @@ public class RegistroAtividade {
     private UUID tipo_id;
 
     @ManyToOne
-    @JoinColumn(name = "pena_id", nullable = false)
-    private UUID pena_id;// o detento
+    @JoinColumn(name = "condenacao_id", nullable = false)
+    private UUID condenacao_id;// o detento
 
-    // verificar se deixamos ou se tiramos depois !
     @ManyToOne
     @JoinColumn(name = "pessoa_id", nullable = false)
-    private UUID pessoa_id;// agente que registrou a pena
+    private UUID pessoa_id;// agente que registrou a condenacao
 
     public RegistroAtividade() {
     }
 
-    public RegistroAtividade(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo_id, UUID pena_id,
+    public RegistroAtividade(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo_id, UUID condenacao_id,
             UUID pessoa_id) {
         this.id = id;
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
         this.tipo_id = tipo_id;
-        this.pena_id = pena_id;
+        this.condenacao_id = condenacao_id;
         this.pessoa_id = pessoa_id;
     }
 
@@ -84,12 +83,12 @@ public class RegistroAtividade {
         this.tipo_id = tipo_id;
     }
 
-    public UUID getPenaId() {
-        return pena_id;
+    public UUID getCondenacaoId() {
+        return condenacao_id;
     }
 
-    public void setPenaId(UUID pena_id) {
-        this.pena_id = pena_id;
+    public void setCondenacaoId(UUID condenacao_id) {
+        this.condenacao_id = condenacao_id;
     }
 
     public UUID getPessoaId() {

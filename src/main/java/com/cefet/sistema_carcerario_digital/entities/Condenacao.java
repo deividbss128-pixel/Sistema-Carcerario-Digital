@@ -14,8 +14,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tb_pena")
-public class Pena {
+@Table(name = "tb_condenacao")
+public class Condenacao {
 
     @Id
     @GeneratedValue
@@ -26,7 +26,7 @@ public class Pena {
     private String descricao;
 
     @Column(nullable = false)
-    private LocalDateTime dataEntrada;// (Service) inserção manual
+    private LocalDateTime dataEntrada; // (Service) tem que fazer a insercao manual
     // LocalDate.of(ano, mes, dia)
 
     @Column(nullable = false)
@@ -38,12 +38,13 @@ public class Pena {
 
     @ManyToOne
     @JoinColumn(name = "pessoa_id", nullable = false)
-    private UUID pessoa_id;// o detento
+    private UUID pessoa_id; // o detento
 
-    public Pena() {
+    public Condenacao() {
     }
 
-    public Pena(UUID id, LocalDateTime dataSaida, StatusDetento situacao, LocalDateTime dataEntrada, UUID pessoa_id) {
+    public Condenacao(UUID id, LocalDateTime dataSaida, StatusDetento situacao, LocalDateTime dataEntrada,
+            UUID pessoa_id) {
         this.id = id;
         this.dataEntrada = dataEntrada;
         this.dataSaida = dataSaida;

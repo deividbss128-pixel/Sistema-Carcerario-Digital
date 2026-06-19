@@ -15,8 +15,8 @@ public class RegistroAtividadeRequestDTO extends BaseDTO {
     @NotBlank(message = "O campo 'tipoId' é obrigatório.")
     private UUID tipoId;
 
-    @NotBlank(message = "O campo 'penaId' é obrigatório.")
-    private UUID penaId;
+    @NotBlank(message = "O campo 'condenacaoId' é obrigatório.")
+    private UUID condenacaoId;
 
     @NotBlank(message = "O campo 'pessoaId' é obrigatório.")
     private UUID pessoaId;
@@ -25,12 +25,12 @@ public class RegistroAtividadeRequestDTO extends BaseDTO {
     }
 
     public RegistroAtividadeRequestDTO(UUID id, LocalDateTime dataRegistro, String descricao, Boolean status,
-            UUID tipoId, UUID penaId, UUID pessoaId) {
+            UUID tipoId, UUID condenacaoId, UUID pessoaId) {
         super(id);
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
         this.tipoId = tipoId;
-        this.penaId = penaId;
+        this.condenacaoId = condenacaoId;
         this.pessoaId = pessoaId;
     }
 
@@ -58,12 +58,12 @@ public class RegistroAtividadeRequestDTO extends BaseDTO {
         this.tipoId = tipoId;
     }
 
-    public UUID getPenaId() {
-        return penaId;
+    public UUID getCondenacaoId() {
+        return condenacaoId;
     }
 
-    public void setPenaId(UUID penaId) {
-        this.penaId = penaId;
+    public void setCondenacaoId(UUID condenacaoId) {
+        this.condenacaoId = condenacaoId;
     }
 
     public UUID getPessoaId() {

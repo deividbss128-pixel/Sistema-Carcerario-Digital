@@ -8,27 +8,27 @@ import com.cefet.sistema_carcerario_digital.entities.StatusDetento;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class PenaRequestDTO extends BaseDTO {
+public class CondenacaoRequestDTO extends BaseDTO {
 
     private String descricao;
 
-    @NotBlank(message = "O campo 'dataEntrada' é obrigatório.")
+    @NotBlank(message = "O campo 'dataEntrada' e obrigatorio.")
     private LocalDateTime dataEntrada;
-    
-    @NotBlank(message = "O campo 'dataSaida' é obrigatório.")
+
+    @NotBlank(message = "O campo 'dataSaida' e obrigatorio.")
     private LocalDateTime dataSaida;
 
-    @NotBlank(message = "O campo 'dataEntrada' é obrigatório.")
+    @NotBlank(message = "O campo 'dataEntrada' e obrigatorio.")
     private StatusDetento situacao;
 
-    @NotBlank(message = "O campo 'pessoaId' é obrigatório.")
+    @NotBlank(message = "O campo 'pessoaId' e obrigatorio.")
     private UUID pessoaId;
 
-    public PenaRequestDTO() {
+    public CondenacaoRequestDTO() {
     }
 
-    public PenaRequestDTO(UUID id, String nome, LocalDate dataNasc, StatusDetento status, LocalDateTime dataEntrada,
-            String matricula, String bloco, Integer cela) {
+    public CondenacaoRequestDTO(UUID id, String nome, LocalDate dataNasc, StatusDetento status,
+            LocalDateTime dataEntrada, String matricula, String bloco, Integer cela) {
         super(id);
         this.dataEntrada = dataEntrada;
     }
@@ -73,5 +73,4 @@ public class PenaRequestDTO extends BaseDTO {
         this.pessoaId = pessoaId;
     }
 
-    
 }

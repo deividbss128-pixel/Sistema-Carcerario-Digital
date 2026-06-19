@@ -81,7 +81,7 @@ public class RegistroAtividadeService {
     private void copiarDtoParaEntidade(RegistroAtividadeRequestDTO dto, RegistroAtividade entity) {
         entity.setDataRegistro(dto.getDataRegistro());
         entity.setDescricao(dto.getDescricao());
-        entity.setPenaId(dto.getPenaId());
+        entity.setCondenacaoId(dto.getCondenacaoId());
         entity.setPessoaId(dto.getPessoaId());
         entity.setTipoId(dto.getTipoId());
     }

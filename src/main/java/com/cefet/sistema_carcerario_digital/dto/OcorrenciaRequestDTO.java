@@ -15,18 +15,18 @@ public class OcorrenciaRequestDTO extends BaseDTO {
     @NotBlank(message = "O campo 'tipoId' é obrigatório.")
     private UUID tipoId;
 
-    @NotBlank(message = "O campo 'penaId' é obrigatório.")
-    private UUID penaId;
+    @NotBlank(message = "O campo 'condenacaoId' é obrigatório.")
+    private UUID condenacaoId;
 
     public OcorrenciaRequestDTO() {
     }
 
-    public OcorrenciaRequestDTO(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipoId, UUID penaId) {
+    public OcorrenciaRequestDTO(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipoId, UUID condenacaoId) {
         super(id);
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
         this.tipoId = tipoId;
-        this.penaId = penaId;
+        this.condenacaoId = condenacaoId;
     }
 
     public LocalDateTime getDataRegistro() {
@@ -53,11 +53,11 @@ public class OcorrenciaRequestDTO extends BaseDTO {
         this.tipoId = tipoId;
     }
 
-    public UUID getPenaId() {
-        return penaId;
+    public UUID getCondenacaoId() {
+        return condenacaoId;
     }
 
-    public void setPenaId(UUID penaId) {
-        this.penaId = penaId;
+    public void setCondenacaoId(UUID condenacaoId) {
+        this.condenacaoId = condenacaoId;
     }
 }

@@ -30,18 +30,18 @@ public class Ocorrencia {
     private UUID tipo_id;
 
     @ManyToOne
-    @JoinColumn(name = "pena_id", nullable = false)
-    private UUID pena_id;
+    @JoinColumn(name = "condenacao_id", nullable = false)
+    private UUID condenacao_id;
 
     public Ocorrencia() {
     }
 
-    public Ocorrencia(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo_id, UUID pena_id) {
+    public Ocorrencia(UUID id, LocalDateTime dataRegistro, String descricao, UUID tipo_id, UUID condenacao_id) {
         this.id = id;
         this.dataRegistro = dataRegistro;
         this.descricao = descricao;
         this.tipo_id = tipo_id;
-        this.pena_id = pena_id;
+        this.condenacao_id = condenacao_id;
     }
 
     public UUID getId() {
@@ -76,11 +76,11 @@ public class Ocorrencia {
         this.tipo_id = tipo_id;
     }
 
-    public UUID getPenaId() {
-        return pena_id;
+    public UUID getCondenacaoId() {
+        return condenacao_id;
     }
 
-    public void setPenaId(UUID pena_ida) {
-        this.pena_id =pena_ida;
+    public void setCondenacaoId(UUID condenacao_ida) {
+        this.condenacao_id =condenacao_ida;
     }
 }

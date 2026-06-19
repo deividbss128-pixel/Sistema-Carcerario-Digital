@@ -3,17 +3,17 @@ package com.cefet.sistema_carcerario_digital.dto;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import com.cefet.sistema_carcerario_digital.entities.Pena;
+import com.cefet.sistema_carcerario_digital.entities.Condenacao;
 import com.cefet.sistema_carcerario_digital.entities.StatusDetento;
 
-public class PenaResponseDTO {
+public class CondenacaoResponseDTO {
 
     private String descricao;
     private LocalDateTime dataEntrada, dataSaida;
     private StatusDetento situacao;
     private UUID pessoaId;
 
-    public PenaResponseDTO(Pena entity) {
+    public CondenacaoResponseDTO(Condenacao entity) {
         this.descricao = entity.getDescricao();
         this.dataEntrada = entity.getDataEntrada();
         this.dataSaida = entity.getDataSaida();

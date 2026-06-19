@@ -9,13 +9,13 @@ public class RegistroAtividadeResponseDTO {
     private LocalDateTime dataRegistro;
     private String descricao;
     private UUID tipoId;
-    private UUID penaId;
+    private UUID condenacaoId;
     private UUID pessoaId;
 
     public RegistroAtividadeResponseDTO(RegistroAtividade entity) {
         this.dataRegistro = entity.getDataRegistro();
         this.descricao = entity.getDescricao();
-        this.penaId = entity.getPenaId();
+        this.condenacaoId = entity.getCondenacaoId();
         this.tipoId = entity.getTipoId();
     }
 
@@ -27,8 +27,8 @@ public class RegistroAtividadeResponseDTO {
         return descricao;
     }
 
-    public UUID getPenaId() {
-        return penaId;
+    public UUID getCondenacaoId() {
+        return condenacaoId;
     }
 
     public UUID getPessoaId() {

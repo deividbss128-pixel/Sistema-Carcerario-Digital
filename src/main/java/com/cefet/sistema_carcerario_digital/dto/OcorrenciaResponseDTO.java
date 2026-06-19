@@ -10,12 +10,12 @@ public class OcorrenciaResponseDTO {
 
     private String descricao;
     private UUID tipoId;
-    private UUID penaId;
+    private UUID condenacaoId;
 
     public OcorrenciaResponseDTO(Ocorrencia entity) {
         this.dataRegistro = entity.getDataRegistro();
         this.descricao = entity.getDescricao();
-        this.penaId = entity.getPenaId();
+        this.condenacaoId = entity.getCondenacaoId();
         this.tipoId = entity.getTipoId();
     }
 
@@ -27,8 +27,8 @@ public class OcorrenciaResponseDTO {
         return descricao;
     }
 
-    public UUID getPenaId() {
-        return penaId;
+    public UUID getCondenacaoId() {
+        return condenacaoId;
     }
 
     public UUID getTipoId() {
