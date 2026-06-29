@@ -1,7 +1,9 @@
 package com.cefet.sistema_carcerario_digital.dto;
 
 import com.cefet.sistema_carcerario_digital.entities.Pessoa;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+@JsonPropertyOrder({ "id", "nome", "cpf" })
 public class PessoaResponseDTO {
     private Long id;
     private String nome;

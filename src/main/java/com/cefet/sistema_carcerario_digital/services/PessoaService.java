@@ -31,7 +31,7 @@ public class PessoaService {
     @Transactional(readOnly = true)
     public PessoaResponseDTO buscarPorId(Long id) {
         Pessoa entity = repo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Pessoa não encontrado. Id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Pessoa não encontrada. Id: " + id));
 
         return new PessoaResponseDTO(entity);
     }
@@ -55,7 +55,7 @@ public class PessoaService {
     @Transactional
     public PessoaResponseDTO alterar(Long id, PessoaRequestDTO dto) {
         Pessoa entity = repo.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Pessoa não encontrado. Id: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Pessoa não encontrada. Id: " + id));
 
         String cpf = normalizarCpf(dto.getCpf());
 
@@ -72,7 +72,7 @@ public class PessoaService {
     @Transactional
     public void excluir(Long id) {
         if (!repo.existsById(id)) {
-            throw new ResourceNotFoundException("Pessoa não encontrado. Id: " + id);
+            throw new ResourceNotFoundException("Pessoa não encontrada. Id: " + id);
         }
         repo.deleteById(id);
     }

@@ -2,6 +2,7 @@ package com.cefet.sistema_carcerario_digital.dto;
 
 import java.time.LocalDateTime;
 import com.cefet.sistema_carcerario_digital.entities.RegistroAtividade;
+// import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 public class RegistroAtividadeResponseDTO {
     private LocalDateTime dataRegistro;
@@ -10,6 +11,7 @@ public class RegistroAtividadeResponseDTO {
     private Long condenacaoId;
     private Long pessoaId;
 
+    // @JsonPropertyOrder({ "id", "nome", "cpf" }) ajustar
     public RegistroAtividadeResponseDTO(RegistroAtividade entity) {
         this.dataRegistro = entity.getDataRegistro();
         this.descricao = entity.getDescricao();
